@@ -77,6 +77,11 @@ export default function Homes() {
     <div className="container mt-5">
 
       <div className="row">
+       {(!isLoggedIn||homes.length === 0 )&& (
+        <div className="text-center mb-4">
+          <p className="fs-5">Login/Signup to add New House</p>
+        </div>
+      )}
         {(homes.length === 0 ? sampleHomes : homes).map(h => (
           <div key={h._id} className="col-md-4 mb-4">
             <div className="card h-100">
@@ -122,11 +127,7 @@ export default function Homes() {
           </div>
         ))}
       </div>
-      {!isLoggedIn&&homes.length === 0 && (
-        <div className="text-center mt-4">
-          <p className="fs-5">Login/Signup to see more house and Add New House</p>
-        </div>
-      )}
+     
     </div>
   );
 }
