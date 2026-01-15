@@ -19,7 +19,7 @@ export default function AddHome() {
   useEffect(() => {
     if (id) {
       setIsEdit(true);
-      axios.get(`https://airbnb-2-89uq.onrender.com/home/${id}`, {
+      axios.get(`https://airbnb-2-89uq.onrender.com/api/home/${id}`, {
         headers: { Authorization: localStorage.getItem("token") }
       })
         .then(res => {
@@ -40,11 +40,11 @@ export default function AddHome() {
     try {
       setLoading(true);
       if (isEdit) {
-        await axios.put(`https://airbnb-2-89uq.onrender.com/home/${id}`, form, {
+        await axios.put(`https://airbnb-2-89uq.onrender.com/api/home/${id}`, form, {
           headers: { Authorization: localStorage.getItem("token") }
         });
       } else {
-        await axios.post("https://airbnb-2-89uq.onrender.com/home", form, {
+        await axios.post("https://airbnb-2-89uq.onrender.com/api/home", form, {
           headers: { Authorization: localStorage.getItem("token") }
         });
       }

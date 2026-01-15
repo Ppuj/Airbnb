@@ -17,7 +17,7 @@ const Signup = () => {
     }
     try {
       setLoading(true);
-      const res=await axios.post("https://airbnb-2-89uq.onrender.com/auth/signup", form);
+      const res=await axios.post("https://airbnb-2-89uq.onrender.com/api/auth/signup", form);
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("role", res.data.role);
        window.location.reload(); 

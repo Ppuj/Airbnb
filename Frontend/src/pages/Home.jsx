@@ -40,7 +40,7 @@ export default function Homes() {
   ];
 
   useEffect(() => {
-    axios.get("https://airbnb-2-89uq.onrender.com/home").then(res => setHomes(res.data));
+    axios.get("https://airbnb-2-89uq.onrender.com/api/home").then(res => setHomes(res.data));
   }, []);
 
   const editHome = (id) => {
@@ -50,7 +50,7 @@ export default function Homes() {
   const deleteHome = async (id) => {
     if (window.confirm("Are you sure you want to delete this home?")) {
       try {
-        await axios.delete(`https://airbnb-2-89uq.onrender.com/home/${id}`, {
+        await axios.delete(`https://airbnb-2-89uq.onrender.com/api/home/${id}`, {
           headers: { Authorization: localStorage.getItem("token") }
         });
         setHomes(homes.filter(home => home._id !== id));
