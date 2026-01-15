@@ -17,9 +17,9 @@ app.use("/api/auth", authRoutes);
 app.use("/api/home", homeRoutes);
 app.use("/api/bookings", bookingRoutes);
 app.use(  express.static(path.join(__dirname, "..", "Frontend", "dist")))
-app.use((req,res)=>{
-  res.sendFile(path.join(__dirname,"..","Frontend","dist","index.html"));
-})
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "Frontend", "dist", "index.html"));
+});
 connectDB(); 
 
 
