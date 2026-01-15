@@ -18,7 +18,7 @@ export default function Login() {
     }
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:5000/api/auth/login", {
+      const res = await axios.post("https://airbnb-2-89uq.onrender.com/auth/login", {
         email,
         password
       });

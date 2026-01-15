@@ -6,7 +6,7 @@ export default function Bookings() {
   const booked = JSON.parse(localStorage.getItem("booked") || "[]");
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/home").then(res => {
+    axios.get("https://airbnb-2-89uq.onrender.com/home").then(res => {
       const bookedHomes = res.data.filter(h => booked.includes(h._id));
       setHomes(bookedHomes);
     });
