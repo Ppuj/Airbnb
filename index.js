@@ -1,2 +1,8 @@
+
 const path = require("path");
-require("child_process").execSync("node Backend/server.js", { stdio: "inherit" });
+const { execSync } = require("child_process");
+
+execSync("node Backend/server.js", {
+  stdio: "inherit",
+  cwd: __dirname 
+});
